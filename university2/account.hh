@@ -112,7 +112,7 @@ private:
     std::vector<Course*> current_course_;
 
     // a boolean value that shows graduation status
-    bool graduated_;
+    bool graduated_ = false;
 };
 
 #endif // ACCOUNT_HH

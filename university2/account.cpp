@@ -95,13 +95,11 @@ std::vector<Course*> Account::get_current_course()
 void Account::graduation()
 {
     graduated_ = true;
-    for (auto course : current_course_)
+    for (auto& course : current_course_)
     {
-        finished_course_.push_back(course);
-        auto it = std::find(current_course_.begin()
-                            , current_course_.end(), course);
-        current_course_.erase(it);
+        finished_course_.push_back(std::move(course));
     }
+    current_course_.clear();
     std::cout << GRADUATED << std::endl;
 }
 
