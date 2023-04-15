@@ -58,17 +58,12 @@ public:
     /**
      * @brief add_current_course
      * @param course that has been signed up
-     * @return false if student have already completed the
-     * course and an error message, and true if the course
-     * can be registered
      */
     bool add_current_course(Course* new_course);
 
     /**
      * @brief add_finished_course
      * @param course that has been completed
-     * @return switch the course from on-going status to
-     * completed status
      */
     void add_finished_course(Course* course);
 
@@ -93,9 +88,12 @@ public:
     /**
      * @brief move all current course to completed course
      */
-
     void graduation();
 
+    /**
+     * @brief already_graduated
+     * @return graduate status
+     */
     bool already_graduated();
 
 private:
